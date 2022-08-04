@@ -1,11 +1,13 @@
 import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Menu from "./component/Menu.jsx"
-import About from "./views/About.jsx"
-import Contact from "./views/Contact.jsx"
+
 
 //components
 import Home from "./views/Home.jsx"
+import DetallesPersonajes from "./component/DetallesPersonajes.jsx"
+import Menu from "./component/Menu.jsx"
+import About from "./views/About.jsx"
+import Contact from "./views/Contact.jsx"
 
 const App = () => {
     return (
@@ -17,8 +19,8 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About/>} />
                     <Route path="/contact" element={<Contact/>} />
+                    <Route path="/character/:character_id" element={<DetallesPersonajes/>} />
                 </Routes>
-            
             </BrowserRouter>
         </>
 

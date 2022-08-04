@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 
+//react-router-dom
+import { useParams, useNavigate } from "react-router";
+
 const DetallesPersonajes = () => {
+    let params = useParams();
+    let navigate = useNavigate();
+
+    const{character_id} = params;
+
+    
     const [person, setPerson] = useState({});
 
     const traerDetalles = async () => {
         try {
-            let response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+            let response = await fetch(`https://rickandmortyapi.com/api/character/${character_id}`);
             let data = await response.json();
             if (response.ok) {
                 setPerson(data);

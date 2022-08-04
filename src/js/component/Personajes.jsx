@@ -11,11 +11,11 @@ const Personajes = ({ character }) => {
         <>
             <div className="col-12 col-md-4">
                 <div className="card my-3">
-                    <img src={image} className="card-img-top" alt="..." />
+                    <img src={image} className="card-img-top" alt={name} />
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{species}</p>
-                        <Link to={`/personajes/${id}`} className="btn btn-primary">
+                        <Link to={`/character/${id}`} className="btn btn-primary">
                             Ver más
                         </Link>
                     </div>

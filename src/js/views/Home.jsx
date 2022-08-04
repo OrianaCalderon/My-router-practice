@@ -1,4 +1,6 @@
 import React , {useEffect,useState} from "react";
+
+//componentes
 import Personajes from "../component/Personajes.jsx";
 
 
@@ -6,7 +8,7 @@ import Personajes from "../component/Personajes.jsx";
 //create your first component
 const Home = () => {
 
-	const [personajesLista, setPersonaje] = useState([]);
+	const [characters, setCharacters] = useState([]);
 
 	const traerPersonajes= async () => {
 		try{
@@ -15,7 +17,7 @@ const Home = () => {
 			console.log(data);
 
 			if(response.ok){
-				setPersonaje(data.results);
+				setCharacters(data.results);
 				
 			}
 
@@ -33,7 +35,7 @@ const Home = () => {
 		<>
 			<div className="container">
 				<div className="row">
-					{personajesLista.map((character)=>{
+					{characters.map((character)=>{
 						return(
 							<Personajes key={`character-${character.id}`} character={character}/>
 						)
